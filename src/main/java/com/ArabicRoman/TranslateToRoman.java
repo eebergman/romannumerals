@@ -62,14 +62,7 @@ public class TranslateToRoman {
 
 	} // toRoman
 
-	// One thousand Method
-	public static ArabicNumber mille(ArabicNumber userObj) {
-		userObj.setNewUserNumber(userObj.getNewUserNumber() - 1000);
-		userObj.setAddToAnswer("M");
-		return userObj;
-	}
-
-	// Switch statement to determine which hundred to use
+	// Switch statement to determine which hundred-place to use
 	public static ArabicNumber centum(ArabicNumber userObj) {
 
 		int hundredToSwitch = Character.getNumericValue(Integer.toString(userObj.getNewUserNumber()).charAt(0));
@@ -108,6 +101,7 @@ public class TranslateToRoman {
 
 	}
 
+	// Switch statement to determine which ten-place to use
 	public static ArabicNumber decem(ArabicNumber userObj) {
 
 		// get the first number of the userNumber
@@ -147,6 +141,7 @@ public class TranslateToRoman {
 		return userObj;
 	}
 
+	// Switch statement to determine which one-place to use
 	public static ArabicNumber unum(ArabicNumber userObj) {
 
 		// get the first number of the userNumber
@@ -187,8 +182,14 @@ public class TranslateToRoman {
 
 	}
 
-	// Methods for the Hundreds
+	// Method for the thousand-place
+	public static ArabicNumber mille(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 1000);
+		userObj.setAddToAnswer("M");
+		return userObj;
+	}
 
+	// Methods for the Hundreds-place
 	public static ArabicNumber nineHundred(ArabicNumber userObj) {
 		userObj.setNewUserNumber(userObj.getNewUserNumber() - 900);
 		userObj.setAddToAnswer("CM");
@@ -244,7 +245,6 @@ public class TranslateToRoman {
 	}
 
 	// Methods for the Tens
-
 	public static ArabicNumber ninety(ArabicNumber userObj) {
 		userObj.setNewUserNumber(userObj.getNewUserNumber() - 90);
 		userObj.setAddToAnswer("XC");
@@ -300,7 +300,6 @@ public class TranslateToRoman {
 	}
 
 	// Methods for the Ones
-
 	public static ArabicNumber nine(ArabicNumber userObj) {
 		userObj.setNewUserNumber(userObj.getNewUserNumber() - 9);
 		userObj.setAddToAnswer("IX");

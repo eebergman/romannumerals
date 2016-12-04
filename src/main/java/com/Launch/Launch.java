@@ -6,6 +6,7 @@ package main.java.com.Launch;
 import java.util.Scanner;
 
 import main.java.com.ArabicRoman.TranslateToRoman;
+import main.java.com.RomanArabic.TranslateToArabic;
 
 /**
  * @author Erin
@@ -36,7 +37,7 @@ public class Launch {
 				TranslateToRoman.toRoman();
 
 			} else {
-
+				TranslateToArabic.toArabic();
 			}
 
 			System.out.println("Would you like to translate again?");
