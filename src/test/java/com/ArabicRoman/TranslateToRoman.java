@@ -7,8 +7,8 @@ import org.junit.Test;
 public class TranslateToRoman {
 
 	@Test
-	public void addTheM() {
-		fail("Not yet implemented");
+	public void oneThousand() {
+		
 	}
 
 }
