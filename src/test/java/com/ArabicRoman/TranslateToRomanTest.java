@@ -29,28 +29,28 @@ public class TranslateToRomanTest {
 	public void nineHundred() {
 		ArabicNumber testUserObj = new ArabicNumber(900);
 		
-		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
-		assertEquals("CM", TranslateToRoman.mille(testUserObj).getAddToAnswer());
+		assertEquals(0, TranslateToRoman.nineHundred(testUserObj).getNewUserNumber());
+		assertEquals("CM", TranslateToRoman.nineHundred(testUserObj).getAddToAnswer());
 	}
 	
 	@Test
 	public void fiveHundred() {
 		ArabicNumber testUserObj = new ArabicNumber(500);
 		
-		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
-		assertEquals("D", TranslateToRoman.mille(testUserObj).getAddToAnswer());
+		assertEquals(0, TranslateToRoman.fiveHundred(testUserObj).getNewUserNumber());
+		assertEquals("D", TranslateToRoman.fiveHundred(testUserObj).getAddToAnswer());
 	}
 	
 	@Test
 	public void oneHundred() {
 		ArabicNumber testUserObj = new ArabicNumber(100);
 		
-		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
-		assertEquals("C", TranslateToRoman.mille(testUserObj).getAddToAnswer());
+		assertEquals(0, TranslateToRoman.oneHundred(testUserObj).getNewUserNumber());
+		assertEquals("C", TranslateToRoman.oneHundred(testUserObj).getAddToAnswer());
 	}
 	
 	@Test
-	public void ninty() {
+	public void ninety() {
 		ArabicNumber testUserObj = new ArabicNumber(90);
 		
 		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
@@ -121,8 +121,7 @@ public class TranslateToRomanTest {
 		assertEquals("M", TranslateToRoman.mille(testUserObj).getAddToAnswer());
 	}
 	
-	@Test
-	public void test() {
-		
-	}
+//	@Test
+//	public void test() {
+//	}
 }

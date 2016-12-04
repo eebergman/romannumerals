@@ -17,7 +17,6 @@ public class Launch {
 
 		Scanner sc = new Scanner(System.in);
 		String userTranslationChoice;
-		String tnxAgain = null;
 		boolean userEnteredCorrectChoice = true;
 		boolean stillPlaying = true;
 
@@ -31,18 +30,17 @@ public class Launch {
 
 				userEnteredCorrectChoice = validUserChoiceEntry(userTranslationChoice = sc.nextLine());
 
-				System.out.println(userTranslationChoice);
-
 			} while (userEnteredCorrectChoice);
 
 			if (userTranslationChoice.equalsIgnoreCase("a")) {
 				TranslateToRoman.toRoman();
+
 			} else {
 
 			}
 
-			System.out.println("Would you like to translate again?\n(Y/N)");
-			stillPlaying = stillPlaying(tnxAgain = sc.nextLine());
+			System.out.println("Would you like to translate again?");
+			stillPlaying = stillTranslate(sc.nextLine());
 
 		} while (stillPlaying);
 
@@ -69,12 +67,12 @@ public class Launch {
 		return returningBooleanForUserEntry;
 	}
 
-	private static boolean stillPlaying(String string) {
+	private static boolean stillTranslate(String string) {
 
 		switch (string.toLowerCase()) {
 		case "n":
 			return false;
-			
+
 		default:
 			break;
 		}

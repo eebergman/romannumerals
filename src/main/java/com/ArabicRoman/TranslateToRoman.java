@@ -3,7 +3,6 @@
  */
 package main.java.com.ArabicRoman;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -14,13 +13,13 @@ public class TranslateToRoman {
 
 	// ADD VALIDATION
 	public static void toRoman() {
-		
+
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 
 		int lengthOfUserNumber;
 		String userNumberAsString;
 		StringBuilder romanAsStringBuilder = new StringBuilder();
-		ArrayList<Character> romanAnswer = new ArrayList<>();
 
 		System.out.println("Please enter the number to be converted.");
 		ArabicNumber userObj = new ArabicNumber(Integer.parseInt(userNumberAsString = sc.nextLine()));
@@ -32,13 +31,13 @@ public class TranslateToRoman {
 				userObj.setNewUserNumber(0);
 
 			} else {
-				switch (userObj.getNewUserNumber()) {
+				switch (lengthOfUserNumber) {
 				case 4:
 					userObj = mille(userObj);
 					break;
 
 				case 3:
-					catchMethodReturn = centum();
+					userObj = centum(userObj);
 					break;
 
 				case 2:
@@ -69,47 +68,104 @@ public class TranslateToRoman {
 		return userObj;
 	}
 
-	private static String centum() {
+	public static ArabicNumber centum(ArabicNumber userObj) {
 
-		int hundredToSwitch = Character.getNumericValue(userNumberAsString.charAt(0));
+		int hundredToSwitch = Character.getNumericValue(Integer.toString(userObj.getNewUserNumber()).charAt(0));
 
 		switch (hundredToSwitch) {
 		case 9:
-			userNumber -= 900;
-			return "CM";
+			userObj = nineHundred(userObj);
+			break;
 		case 8:
-			userNumber -= 800;
-			return "DCCC";
+			userObj = eightHundred(userObj);
+			break;
 		case 7:
-			userNumber -= 700;
-			return "DCC";
+			userObj = sevenHundred(userObj);
+			break;
 		case 6:
-			userNumber -= 700;
-			return "DC";
+			userObj = sixHundred(userObj);
+			break;
 		case 5:
-			userNumber -= 500;
-			return "D";
+			userObj = fiveHundred(userObj);
+			break;
 		case 4:
-			userNumber -= 400;
-			return "CD";
+			userObj = fourHundred(userObj);
+			break;
 		case 3:
-			userNumber -= 300;
-			return "CCC";
+			userObj = threeHundred(userObj);
+			break;
 		case 2:
-			userNumber -= 200;
-			return "CC";
+			userObj = twoHundred(userObj);
+			break;
 		// Default is 1
 		default:
-			userNumber -= 100;
-			return "C";
+			userObj = oneHundred(userObj);
+			break;
 		}
+		return userObj;
 
 	}
 
-	private static void decem() {
+	public static void decem() {
 	}
 
-	private static void unum() {
+	public static void unum() {
+	}
+
+	// Methods for the Hundreds
+
+	public static ArabicNumber nineHundred(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 900);
+		userObj.setAddToAnswer("CM");
+		return userObj;
+	}
+
+	public static ArabicNumber eightHundred(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 800);
+		userObj.setAddToAnswer("DCCC");
+		return userObj;
+	}
+
+	public static ArabicNumber sevenHundred(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 700);
+		userObj.setAddToAnswer("DCC");
+		return userObj;
+	}
+
+	public static ArabicNumber sixHundred(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 600);
+		userObj.setAddToAnswer("DC");
+		return userObj;
+	}
+
+	public static ArabicNumber fiveHundred(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 500);
+		userObj.setAddToAnswer("D");
+		return userObj;
+	}
+
+	public static ArabicNumber fourHundred(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 400);
+		userObj.setAddToAnswer("CD");
+		return userObj;
+	}
+
+	public static ArabicNumber threeHundred(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 300);
+		userObj.setAddToAnswer("CCC");
+		return userObj;
+	}
+
+	public static ArabicNumber twoHundred(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 200);
+		userObj.setAddToAnswer("CC");
+		return userObj;
+	}
+
+	public static ArabicNumber oneHundred(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 100);
+		userObj.setAddToAnswer("C");
+		return userObj;
 	}
 
 }
