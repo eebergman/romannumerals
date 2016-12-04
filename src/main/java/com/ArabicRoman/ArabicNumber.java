@@ -12,6 +12,7 @@ public class ArabicNumber {
 	private int originalUserNumber;
 	private int newUserNumber;
 	private String addToAnswer = null;
+	private String answer = null;
 
 	public ArabicNumber() {
 	}
@@ -19,6 +20,14 @@ public class ArabicNumber {
 	public ArabicNumber(int originalUserNumber) {
 		this.originalUserNumber = originalUserNumber;
 		this.newUserNumber = originalUserNumber;
+	}
+
+	public String getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
 	}
 
 	public int getOriginalUserNumber() {

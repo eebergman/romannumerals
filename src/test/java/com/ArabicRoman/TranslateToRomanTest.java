@@ -53,56 +53,56 @@ public class TranslateToRomanTest {
 	public void ninety() {
 		ArabicNumber testUserObj = new ArabicNumber(90);
 		
-		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
-		assertEquals("XC", TranslateToRoman.mille(testUserObj).getAddToAnswer());
+		assertEquals(0, TranslateToRoman.ninety(testUserObj).getNewUserNumber());
+		assertEquals("XC", TranslateToRoman.ninety(testUserObj).getAddToAnswer());
 	}
 	
 	@Test
 	public void fifty() {
 		ArabicNumber testUserObj = new ArabicNumber(50);
 		
-		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
-		assertEquals("L", TranslateToRoman.mille(testUserObj).getAddToAnswer());
+		assertEquals(0, TranslateToRoman.fifty(testUserObj).getNewUserNumber());
+		assertEquals("L", TranslateToRoman.fifty(testUserObj).getAddToAnswer());
 	}
 	
 	@Test
 	public void ten() {
 		ArabicNumber testUserObj = new ArabicNumber(10);
 		
-		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
-		assertEquals("X", TranslateToRoman.mille(testUserObj).getAddToAnswer());
+		assertEquals(0, TranslateToRoman.ten(testUserObj).getNewUserNumber());
+		assertEquals("X", TranslateToRoman.ten(testUserObj).getAddToAnswer());
 	}
 	
 	@Test
 	public void nine() {
 		ArabicNumber testUserObj = new ArabicNumber(9);
 		
-		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
-		assertEquals("IX", TranslateToRoman.mille(testUserObj).getAddToAnswer());
+		assertEquals(0, TranslateToRoman.nine(testUserObj).getNewUserNumber());
+		assertEquals("IX", TranslateToRoman.nine(testUserObj).getAddToAnswer());
 	}
 	
 	@Test
 	public void five() {
 		ArabicNumber testUserObj = new ArabicNumber(5);
 		
-		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
-		assertEquals("V", TranslateToRoman.mille(testUserObj).getAddToAnswer());
+		assertEquals(0, TranslateToRoman.five(testUserObj).getNewUserNumber());
+		assertEquals("V", TranslateToRoman.five(testUserObj).getAddToAnswer());
 	}
 	
 	@Test
 	public void three() {
 		ArabicNumber testUserObj = new ArabicNumber(3);
 		
-		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
-		assertEquals("III", TranslateToRoman.mille(testUserObj).getAddToAnswer());
+		assertEquals(0, TranslateToRoman.three(testUserObj).getNewUserNumber());
+		assertEquals("III", TranslateToRoman.three(testUserObj).getAddToAnswer());
 	}
 	
 	@Test
 	public void one() {
 		ArabicNumber testUserObj = new ArabicNumber(1);
 		
-		assertEquals(0, TranslateToRoman.mille(testUserObj).getNewUserNumber());
-		assertEquals("I", TranslateToRoman.mille(testUserObj).getAddToAnswer());
+		assertEquals(0, TranslateToRoman.one(testUserObj).getNewUserNumber());
+		assertEquals("I", TranslateToRoman.one(testUserObj).getAddToAnswer());
 	}
 	
 	@Test
