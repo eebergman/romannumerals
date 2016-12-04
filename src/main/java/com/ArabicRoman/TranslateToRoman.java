@@ -12,33 +12,29 @@ import java.util.Scanner;
  */
 public class TranslateToRoman {
 
-	private static Scanner sc = new Scanner(System.in);
-	private static int userNumber;
-	private static String userNumberAsString;
-	@SuppressWarnings("unused")
-	private static ArrayList<Character> romanAnswer = new ArrayList<>();
-
 	// ADD VALIDATION
 	public static void toRoman() {
+		
+		Scanner sc = new Scanner(System.in);
 
 		int lengthOfUserNumber;
-		String catchMethodReturn = null;
+		String userNumberAsString;
 		StringBuilder romanAsStringBuilder = new StringBuilder();
+		ArrayList<Character> romanAnswer = new ArrayList<>();
 
 		System.out.println("Please enter the number to be converted.");
-
-		userNumber = Integer.parseInt(userNumberAsString = sc.nextLine());
+		ArabicNumber userObj = new ArabicNumber(Integer.parseInt(userNumberAsString = sc.nextLine()));
 		lengthOfUserNumber = userNumberAsString.length();
 
 		do {
-			if (userNumber > 2999 || userNumber < 1) {
+			if (userObj.getNewUserNumber() > 2999 || userObj.getNewUserNumber() < 1) {
 				System.out.println("Invalid");
-				userNumber = 0;
+				userObj.setNewUserNumber(0);
 
 			} else {
-				switch (lengthOfUserNumber) {
+				switch (userObj.getNewUserNumber()) {
 				case 4:
-					catchMethodReturn = mille();
+					userObj = mille(userObj);
 					break;
 
 				case 3:
@@ -57,25 +53,26 @@ public class TranslateToRoman {
 					break;
 				}
 			}
-			romanAsStringBuilder.append(catchMethodReturn);
-			userNumberAsString = Integer.toString(userNumber);
+			romanAsStringBuilder.append(userObj.getAddToAnswer());
+			userNumberAsString = Integer.toString(userObj.getNewUserNumber());
 			lengthOfUserNumber = userNumberAsString.length();
 
-		} while (userNumber > 0);
+		} while (userObj.getNewUserNumber() > 0);
 
 		System.out.println(romanAsStringBuilder);
 
-	}
+	} // toRoman
 
-	private static String mille() {
-		userNumber -= 1000;
-		return "M";
+	public static ArabicNumber mille(ArabicNumber userObj) {
+		userObj.setNewUserNumber(userObj.getNewUserNumber() - 1000);
+		userObj.setAddToAnswer("M");
+		return userObj;
 	}
 
 	private static String centum() {
-		
+
 		int hundredToSwitch = Character.getNumericValue(userNumberAsString.charAt(0));
-		
+
 		switch (hundredToSwitch) {
 		case 9:
 			userNumber -= 900;
