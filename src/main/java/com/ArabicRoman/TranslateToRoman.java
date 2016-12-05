@@ -26,9 +26,13 @@ public class TranslateToRoman {
 		lengthOfUserNumber = userNumberAsString.length();
 
 		do {
-			if (userObj.getNewUserNumber() > 4999 || userObj.getNewUserNumber() < 1) {
-				System.out.println("Invalid");
+			if (userObj.getNewUserNumber() > 4999) {
+				System.out.println("Numbers in excess of 4999 or not possible to display here and \n"
+						+ "are not generally used now.");
 				userObj.setNewUserNumber(0);
+
+			} else if (userObj.getNewUserNumber() < 1) {
+				System.out.println("Romans did not have the concept of zero, nor\n" + "did they use negative numbers");
 
 			} else {
 				switch (lengthOfUserNumber) {

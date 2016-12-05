@@ -40,7 +40,7 @@ public class Launch {
 				TranslateToArabic.toArabic();
 			}
 
-			System.out.println("Would you like to translate again?");
+			System.out.println("Would you like to translate another number?\n\t(Y/N)");
 			stillPlaying = stillTranslate(sc.nextLine());
 
 		} while (stillPlaying);
