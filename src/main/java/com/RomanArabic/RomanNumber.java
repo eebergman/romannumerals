@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class RomanNumber {
 
-	private int addToAnswer;
-	private int answer;
+	private int addToAnswer = 0;
+	private int answer = 0;
 	private String originalUserNum = null;
 	private String newUserNum = null;
 	ArrayList<Character> userInputAList = new ArrayList<>();
