@@ -47,13 +47,13 @@ public class TranslateToArabic {
 				userObj = ten(userObj);
 				break;
 
-			 case 'v':
-			 userObj = five(userObj);
-			 break;
-			
-			 case 'i':
-			 userObj = one(userObj);
-			 break;
+			case 'v':
+				userObj = five(userObj);
+				break;
+
+			case 'i':
+				userObj = one(userObj);
+				break;
 
 			default:
 				System.out.println("It looks like you've included a nonvalid character"
@@ -101,9 +101,12 @@ public class TranslateToArabic {
 		case 'd':
 			userObj = fourHundred(userObj);
 			break;
-		default:
+		case 'a':
 			userObj.setAddToAnswer(100);
 			userObj.getUserInputAList().remove(0);
+			break;
+		default:
+			System.out.println("You've entered incorrect formatting for a Roman Numeral. Please try again.");
 			break;
 		}
 
@@ -152,16 +155,19 @@ public class TranslateToArabic {
 		case 'l':
 			userObj = forty(userObj);
 			break;
-		default:
+		case 'a':
 			userObj.setAddToAnswer(10);
 			userObj.getUserInputAList().remove(0);
+			break;
+		default:
+			System.out.println("You've entered incorrect formatting for a Roman Numeral. Please try again.");
 			break;
 		}
 
 		return userObj;
 	}
 
-	//90
+	// 90
 	public static RomanNumber ninety(RomanNumber userObj) {
 		userObj.setAddToAnswer(90);
 		userObj.getUserInputAList().remove(0);
@@ -203,16 +209,19 @@ public class TranslateToArabic {
 		case 'v':
 			userObj = four(userObj);
 			break;
-		default:
+		case 'a':
 			userObj.setAddToAnswer(1);
 			userObj.getUserInputAList().remove(0);
+			break;
+		default:
+			System.out.println("You've entered incorrect formatting for a Roman Numeral. Please try again.");
 			break;
 		}
 
 		return userObj;
 	}
 
-	//9
+	// 9
 	public static RomanNumber nine(RomanNumber userObj) {
 		userObj.setAddToAnswer(9);
 		userObj.getUserInputAList().remove(0);
@@ -227,5 +236,5 @@ public class TranslateToArabic {
 		userObj.getUserInputAList().remove(0);
 		return userObj;
 	}
-	
+
 }// class

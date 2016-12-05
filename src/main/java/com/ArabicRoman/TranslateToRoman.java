@@ -26,7 +26,7 @@ public class TranslateToRoman {
 		lengthOfUserNumber = userNumberAsString.length();
 
 		do {
-			if (userObj.getNewUserNumber() > 2999 || userObj.getNewUserNumber() < 1) {
+			if (userObj.getNewUserNumber() > 4999 || userObj.getNewUserNumber() < 1) {
 				System.out.println("Invalid");
 				userObj.setNewUserNumber(0);
 
