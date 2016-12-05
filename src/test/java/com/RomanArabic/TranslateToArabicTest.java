@@ -67,7 +67,7 @@ public class TranslateToArabicTest {
 
 	@Test
 	public void forty() {
-		RomanNumber testUserObj = new RomanNumber("il");
+		RomanNumber testUserObj = new RomanNumber("xl");
 
 		assertEquals(40, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
 	}

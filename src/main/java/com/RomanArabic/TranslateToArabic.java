@@ -47,13 +47,13 @@ public class TranslateToArabic {
 				userObj = ten(userObj);
 				break;
 
-			// case 'v':
-			// userObj = five(userObj);
-			// break;
-			//
-			// case 'i':
-			// userObj = one(userObj);
-			// break;
+			 case 'v':
+			 userObj = five(userObj);
+			 break;
+			
+			 case 'i':
+			 userObj = one(userObj);
+			 break;
 
 			default:
 				System.out.println("It looks like you've included a nonvalid character"
@@ -68,24 +68,31 @@ public class TranslateToArabic {
 		return userObj;
 	}
 
-	// Remove left most 'M' and add 1000 to answer value
+	// 1000
 	public static RomanNumber thousands(RomanNumber userObj) {
 		userObj.setAddToAnswer(1000);
 		userObj.getUserInputAList().remove(0);
 		return userObj;
 	}
 
-	// remove left most D and add 500
+	// 500
 	public static RomanNumber fiveHundred(RomanNumber userObj) {
 		userObj.setAddToAnswer(500);
 		userObj.getUserInputAList().remove(0);
 		return userObj;
 	}
 
-	// Add 900, 400, or 100
+	// 100, access 900 & 400
 	public static RomanNumber oneHundred(RomanNumber userObj) {
 
-		char secondLetter = userObj.userInputAList.get(1);
+		char secondLetter;
+
+		if (userObj.userInputAList.size() > 1) {
+			secondLetter = userObj.userInputAList.get(1);
+
+		} else {
+			secondLetter = 'a';
+		}
 
 		switch (secondLetter) {
 		case 'm':
@@ -95,7 +102,7 @@ public class TranslateToArabic {
 			userObj = fourHundred(userObj);
 			break;
 		default:
-			userObj.setAnswer(userObj.getAnswer() + 100);
+			userObj.setAddToAnswer(100);
 			userObj.getUserInputAList().remove(0);
 			break;
 		}
@@ -103,6 +110,7 @@ public class TranslateToArabic {
 		return userObj;
 	}
 
+	// 900
 	public static RomanNumber nineHundred(RomanNumber userObj) {
 		userObj.setAddToAnswer(900);
 		userObj.getUserInputAList().remove(0);
@@ -118,36 +126,106 @@ public class TranslateToArabic {
 		return userObj;
 	}
 
-	// remove left most L and add 50
+	// 50
 	public static RomanNumber fifty(RomanNumber userObj) {
-		userObj.setAnswer(userObj.getAnswer() + 50);
+		userObj.setAddToAnswer(50);
 		userObj.getUserInputAList().remove(0);
 		return userObj;
 	}
 
-	// Check for 90 & 40, else 10
+	// 10, access 90 & 40
 	public static RomanNumber ten(RomanNumber userObj) {
 
-		char secondLetter = userObj.userInputAList.get(1);
+		char secondLetter;
 
-		// switch (secondLetter) {
-		// case 'c':
-		// userObj = ninety(userObj);
-		// break;
-		// case 'l':
-		// userObj = fourty(userObj);
-		// break;
-		// default:
-		// userObj.setAnswer(userObj.getAnswer() + 10);
-		// userObj.getUserInputAList().remove(0);
-		// break;
-		// return userObj;
-		// }
+		if (userObj.userInputAList.size() > 1) {
+			secondLetter = userObj.userInputAList.get(1);
+
+		} else {
+			secondLetter = 'a';
+		}
+
+		switch (secondLetter) {
+		case 'c':
+			userObj = ninety(userObj);
+			break;
+		case 'l':
+			userObj = forty(userObj);
+			break;
+		default:
+			userObj.setAddToAnswer(10);
+			userObj.getUserInputAList().remove(0);
+			break;
+		}
 
 		return userObj;
 	}
 
-	// ninety
-	// forty
+	//90
+	public static RomanNumber ninety(RomanNumber userObj) {
+		userObj.setAddToAnswer(90);
+		userObj.getUserInputAList().remove(0);
+		userObj.getUserInputAList().remove(0);
+		return userObj;
+	}
 
+	// 40
+	public static RomanNumber forty(RomanNumber userObj) {
+		userObj.setAddToAnswer(40);
+		userObj.getUserInputAList().remove(0);
+		userObj.getUserInputAList().remove(0);
+		return userObj;
+	}
+
+	// 5
+	public static RomanNumber five(RomanNumber userObj) {
+		userObj.setAddToAnswer(5);
+		userObj.getUserInputAList().remove(0);
+		return userObj;
+	}
+
+	// 1, access 9 & 4
+	public static RomanNumber one(RomanNumber userObj) {
+
+		char secondLetter;
+
+		if (userObj.userInputAList.size() > 1) {
+			secondLetter = userObj.userInputAList.get(1);
+
+		} else {
+			secondLetter = 'a';
+		}
+
+		switch (secondLetter) {
+		case 'x':
+			userObj = nine(userObj);
+			break;
+		case 'v':
+			userObj = four(userObj);
+			break;
+		default:
+			userObj.setAddToAnswer(1);
+			userObj.getUserInputAList().remove(0);
+			break;
+		}
+
+		return userObj;
+	}
+
+	//9
+	public static RomanNumber nine(RomanNumber userObj) {
+		userObj.setAddToAnswer(9);
+		userObj.getUserInputAList().remove(0);
+		userObj.getUserInputAList().remove(0);
+		return userObj;
+	}
+
+	// 4
+	public static RomanNumber four(RomanNumber userObj) {
+		userObj.setAddToAnswer(4);
+		userObj.getUserInputAList().remove(0);
+		userObj.getUserInputAList().remove(0);
+		return userObj;
+	}
+	
 }// class
