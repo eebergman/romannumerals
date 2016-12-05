@@ -11,100 +11,100 @@ public class TranslateToArabicTest {
 
 	@Test
 	public void oneThousand() {
-		RomanNumber testUserObj = new RomanNumber("M");
+		RomanNumber testUserObj = new RomanNumber("m");
 
-		assertEquals(1000, TranslateToArabic.thousands(testUserObj).getAnswer());
+		assertEquals(1000, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
 	}
 
 	@Test
 	public void twoThousand() {
-		RomanNumber testUserObj = new RomanNumber("MM");
+		RomanNumber testUserObj = new RomanNumber("mm");
 
-		assertEquals(2000, TranslateToArabic.thousands(testUserObj).getAnswer());
-	}
-
-	@Test
-	public void nineHundred() {
-		RomanNumber testUserObj = new RomanNumber("CM");
-
-		assertEquals(900, TranslateToArabic.thousands(testUserObj).getAnswer());
+		assertEquals(2000, TranslateToArabic.theFirstLetter(testUserObj).getAnswer());
 	}
 
 	@Test
 	public void fiveHundred() {
-		RomanNumber testUserObj = new RomanNumber("D");
+		RomanNumber testUserObj = new RomanNumber("d");
 
-		assertEquals(0, TranslateToArabic.fiveHundred(testUserObj).getAddToAnswer());
+		assertEquals(500, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
+	}
+
+	@Test
+	public void nineHundred() {
+		RomanNumber testUserObj = new RomanNumber("cm");
+
+		assertEquals(900, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
+	}
+
+	@Test
+	public void fourHundred() {
+		RomanNumber testUserObj = new RomanNumber("cd");
+
+		assertEquals(400, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
 	}
 
 	@Test
 	public void oneHundred() {
-		RomanNumber testUserObj = new RomanNumber(100);
+		RomanNumber testUserObj = new RomanNumber("c");
 
-		assertEquals(0, TranslateToArabic.oneHundred(testUserObj).getAddToAnswer());
-	}
-
-	@Test
-	public void ninety() {
-		RomanNumber testUserObj = new RomanNumber(90);
-
-		assertEquals(0, TranslateToArabic.ninety(testUserObj).getAddToAnswer());
+		assertEquals(100, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
 	}
 
 	@Test
 	public void fifty() {
-		RomanNumber testUserObj = new RomanNumber(50);
+		RomanNumber testUserObj = new RomanNumber("l");
 
-		assertEquals(0, TranslateToArabic.fifty(testUserObj).getAddToAnswer());
+		assertEquals(50, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
+	}
+
+	@Test
+	public void ninety() {
+		RomanNumber testUserObj = new RomanNumber("xc");
+
+		assertEquals(90, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
+	}
+
+	@Test
+	public void forty() {
+		RomanNumber testUserObj = new RomanNumber("il");
+
+		assertEquals(40, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
 	}
 
 	@Test
 	public void ten() {
-		RomanNumber testUserObj = new RomanNumber(10);
+		RomanNumber testUserObj = new RomanNumber("x");
 
-		assertEquals(0, TranslateToArabic.ten(testUserObj).getAddToAnswer());
-	}
-
-	@Test
-	public void nine() {
-		RomanNumber testUserObj = new RomanNumber(9);
-
-		assertEquals(0, TranslateToArabic.nine(testUserObj).getAddToAnswer());
+		assertEquals(10, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
 	}
 
 	@Test
 	public void five() {
-		RomanNumber testUserObj = new RomanNumber(5);
+		RomanNumber testUserObj = new RomanNumber("v");
 
-		assertEquals(0, TranslateToArabic.five(testUserObj).getAddToAnswer());
+		assertEquals(5, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
 	}
 
 	@Test
-	public void three() {
-		RomanNumber testUserObj = new RomanNumber(3);
+	public void nine() {
+		RomanNumber testUserObj = new RomanNumber("ix");
 
-		assertEquals(0, TranslateToArabic.three(testUserObj).getAddToAnswer());
+		assertEquals(9, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
+	}
+
+	@Test
+	public void four() {
+		RomanNumber testUserObj = new RomanNumber("iv");
+
+		assertEquals(4, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
 	}
 
 	@Test
 	public void one() {
-		RomanNumber testUserObj = new RomanNumber(1);
+		RomanNumber testUserObj = new RomanNumber("i");
 
-		assertEquals(0, TranslateToArabic.one(testUserObj).getAddToAnswer());
-	}
-
-	@Test
-	public void oneThousandSixtySix() {
-		RomanNumber testUserObj = new RomanNumber(1066);
-
-		assertEquals(66, TranslateToArabic.mille(testUserObj).getAnswer());
-	}
-
-	@Test
-	public void oneThousandEightyNine() {
-		RomanNumber testUserObj = new RomanNumber(1989);
-
-		assertEquals(989, TranslateToArabic.mille(testUserObj).getAnswer());
+		assertEquals(1, TranslateToArabic.theFirstLetter(testUserObj).getAddToAnswer());
 	}
 
 }
